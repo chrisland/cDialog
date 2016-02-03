@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html  style="width:100%;height:100%">
+<head>
+  <meta charset="utf-8">
+  <title>Example</title>
+
+
+  <!-- include source files here... -->
+  <script src="../src/cDialog.js"></script>
+  
+	
+
+</head>
+
+<body style="width:100%;height:100%">
+	
+  <button id="myTest">open</button>
+
+	<script>
+		
+    var myDialog = new cDialog({
+      type: 'input',
+      confirm: {
+        text: 'Ok !',
+        handler: function (data, e) {
+          console.log('ok! done', data);
+        }
+      },
+      abort: {
+        text: 'Abort !',
+        handler: function (e) {
+          console.log('Abort! done');
+        }
+      }
+    });
+    
+    document.getElementById('myTest').onclick = function () {
+      myDialog.show();
+    };
+		
+		
+			  
+	</script>
+	
+	
+</body>
+</html>
